@@ -1,3 +1,7 @@
+html, body{
+    overflow-x: hidden;
+}
+
 body{
     background: black;
     text-align: center;
@@ -43,7 +47,7 @@ body{
 }
 
 .navbar-default .navbar-toggle{
-    margin: 25px 22px;
+    margin: 27px 22px;
     background: transparent;
     border: none;
 }
@@ -108,7 +112,7 @@ input{
 .editComment form, .registerForm form, .loginForm form, 
 .forgotForm form, .avatarForm form{
     margin: 15px auto;
-    width: 350px
+    width: 330px
 }
 
 .custom-form-control{
