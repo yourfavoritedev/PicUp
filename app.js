@@ -17,9 +17,13 @@ app.locals.moment = require("moment") //use for time elapsed functions
 var crypto = require("crypto")
 var notAUser = true
 
+
+
 //connect to mongo database
-// mongoose.connect("mongodb://localhost/nba_moments")
-mongoose.connect("mongodb://Chris:ucirul3s@ds123971.mlab.com:23971/nba_moments")
+
+//created environment variable to store database - mongodb://localhost/nba_moments
+mongoose.connect(process.env.DATABASEURL)
+// mongoose.connect("mongodb://Chris:ucirul3s@ds123971.mlab.com:23971/nba_moments")
 
 //tells express to find assets(css, images, etc) in public folder
 app.use(express.static("public"))
