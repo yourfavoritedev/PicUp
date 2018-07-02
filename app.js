@@ -21,9 +21,11 @@ var notAUser = true
 
 //connect to mongo database
 
+//backup in case our environment variable is not found
+var url = process.env.DATABASEURL || "mongodb://localhost/nba_moments"
 //created environment variable to store database - mongodb://localhost/nba_moments
-mongoose.connect(process.env.DATABASEURL)
-// mongoose.connect("mongodb://Chris:ucirul3s@ds123971.mlab.com:23971/nba_moments")
+mongoose.connect(url)
+
 
 //tells express to find assets(css, images, etc) in public folder
 app.use(express.static("public"))
