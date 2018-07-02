@@ -1,0 +1,22 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+    <div class="banner">
+        <% if(!currentUser){ %>
+        <% } else if(currentUser.avatar == ""){ %>
+            <a href="/dashboard/<%= currentUser.id %>/avatar/edit"><img class="avatar" src="/avatar.png"></a>
+        <% } else{ %>
+            <a href="/dashboard/<%= currentUser.id %>/avatar/edit"><img class="avatar" src="<%= currentUser.avatar %>"></a>
+        <% } %>
+        <h1>Upload a new image to change your avatar.</h1>
+    <div class="avatarForm">
+        <form action="/dashboard/<%= currentUser.id %>/avatar/edit?_method=PUT" method="POST">
+            <input class="form-control" type="text" placeholder="image-url" name="avatar" required>
+            <button class="ui button green huge form-control">Update</button>
+        </form>
+    </div>    
+    </div>
+</div>
+
+
+<% include partials/footer.ejs %>

@@ -1,0 +1,44 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+    <% if(highlights.length == 0){ %>
+        <div class="banner">
+            <% user.forEach(function(user){ %>
+                <% if(user.avatar == ""){ %>
+                    <img class="avatar" src="/avatar.png"> 
+                <% } else{ %>
+                    <img class="avatar" src="<%= user.avatar %>">
+                <% } %>
+            <% }) %>          
+            <h1>It looks like you haven't added any moments</h1>
+            <a class="ui inverted button blue huge"href="/highlights/new">Add Moment</a>
+        </div>
+        <% } else{ %>
+            <div class="banner">
+            <% user.forEach(function(user){ %>
+                <% if(user.avatar == ""){ %>
+                    <img class="avatar" src="/avatar.png"> 
+                <% } else{ %>
+                    <img class="avatar" src="<%= user.avatar %>">
+                <% } %>
+                <h1>Revisit <%= user.username %>'s moments</h1>                
+            <% }) %>
+            </div>
+            <div class="row">
+                <% highlights.forEach(function(highlight){ %>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="img-thumbnail">
+                            <img class="img-thumbnail" src="<%= highlight.image %>">
+                            <div class="caption">
+                                <h4><%= highlight.player %></h4>
+                            </div>
+                        <p><a class="ui teal button large" href="/highlights/<%= highlight._id %>">View</a></p>
+                    </div>
+                </div>
+            <% }) %>        
+        </div>
+    <% } %>
+</div>
+
+
+<% include partials/footer.ejs %>

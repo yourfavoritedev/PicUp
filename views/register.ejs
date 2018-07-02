@@ -1,0 +1,17 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+    <div class="banner">
+        <h1>Register to post with NBA moments</h1>    
+    </div>
+    <div class="registerForm">
+        <form action="/register" method="POST">
+            <input class="form-control" type="text" placeholder="username" name="username" required>
+            <input class="form-control" type="email" placeholder="email" name="email" required>
+            <input class="form-control" type="password" placeholder="password" name="password" required>
+            <button class="ui green button big form-control">Sign Up</button>
+        </form>    
+    </div>
+</div>
+
+<% include partials/footer.ejs %>

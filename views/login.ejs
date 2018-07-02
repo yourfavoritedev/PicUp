@@ -1,0 +1,17 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+    <div class="banner">
+        <h1>Please login</h1>
+    </div>
+    <div class="loginForm">
+        <form action="/login" method="POST">
+            <input class="form-control" type="text" placeholder="username" name="username">
+            <input class="form-control" type="password" placeholder="password" name="password">
+            <button class="ui green button big form-control">Login</button>
+        </form>    
+    </div>
+</div>
+
+
+<% include partials/footer.ejs %>

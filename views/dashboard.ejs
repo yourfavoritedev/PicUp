@@ -1,0 +1,24 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+    <div class="banner">
+        <% if(!currentUser){ %>
+        <% } else if(currentUser.avatar == ""){ %>
+            <a href="/dashboard/avatar/edit"><img class="avatar" src="avatar.png"></a>
+            <h1>Welcome back <%= currentUser.username %></h1>
+            <form action="/dashboard/<%= currentUser.username %>" method="GET">
+                <input type="hidden" value="<%= currentUser.username %>" name="poster">
+                <button class="ui inverted green button huge">View Dashboard</button>
+            </form>            
+        <% } else{ %>
+            <a href="/dashboard/avatar/edit"><img class="avatar" src="<%= currentUser.avatar %>"></a>
+            <h1>Welcome back <%= currentUser.username %></h1>
+            <form action="/dashboard/<%= currentUser.username %>" method="GET">
+                <input type="hidden" value="<%= currentUser.username %>" name="poster">
+                <button class="ui inverted green button huge">View Dashboard</button>
+            </form>            
+        <% } %>
+    </div>
+</div>
+
+<% include partials/footer.ejs %>

@@ -1,0 +1,29 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+    <div class="banner">
+        <h1>Edit comment for <%= highlight.player %></h1>    
+    </div>
+
+    <div class="editComment">
+        <% if(currentUser.username = "Chris"){ %>
+            <form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
+                <input class="form-control" type="hidden" value="<%= highlight._id %>" name="highlightId">
+                <input class="form-control" type="hidden" value="<%= comment.author %>" name="author">
+                <input class="form-control" type="text" value="<%= comment.text %>" name="text">
+                <button class="ui green button big form-control">Submit</button>                
+            </form>
+        <% } else{ %>
+            <form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
+                <input class="form-control" type="hidden" value="<%= highlight._id %>" name="highlightId">
+                <input class="form-control" type="hidden" value="<%= currentUser.username %>" name="author">
+                <input class="form-control" type="text" value="<%= comment.text %>" name="text">
+                <button class="ui green button big form-control">Submit</button>
+            </form>
+        <% } %>
+    </div>
+</div>
+
+
+
+<% include partials/footer.ejs %>

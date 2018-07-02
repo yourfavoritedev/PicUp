@@ -1,0 +1,19 @@
+<% include partials/header.ejs %>
+
+<div class=container>
+    <div class="banner">
+        <h1>Edit <%= highlight.player %></h1>
+        <a class="ui inverted button blue huge" href="/highlights">View Albums</a>
+    </div>
+    <div class="editSection">
+        <form action="/highlights/<%= highlight._id %>?_method=PUT" method="POST">
+            <input class="form-control" type="text" value="<%= highlight.player %>" name="name">
+            <input class="form-control" type="text" value="<%= highlight.image %>" name="image">
+            <textarea class="form-control" name="desc" required ><%= highlight.desc %></textarea>
+            <button class="ui green button big form-control">Update</button>
+        </form>
+    </div>
+
+</div>
+
+<% include partials/footer.ejs %>

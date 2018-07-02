@@ -1,0 +1,20 @@
+<% include partials/header.ejs %>
+
+<div class=container>
+    <div class="banner">
+        <h1>Add a new moment</h1>
+        <a class="ui inverted blue button huge" href="/highlights">View Albums</a>
+    </div>
+
+    <div class="newForm">
+        <form action="/highlights" method="POST">
+            <input class="form-control" type="hidden" value="<%= currentUser.username %>" name="poster">
+            <input class="form-control" type="text" placeholder="Player" name="name">
+            <input class="form-control" type="text" placeholder="image-url" name="image">
+            <textarea class="form-control" name="desc" required></textarea>
+            <button class="ui green button big form-control">Submit</button>
+        </form>    
+    </div>
+</div>
+
+<% include partials/footer.ejs %>
