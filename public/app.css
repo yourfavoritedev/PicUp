@@ -116,6 +116,10 @@ input{
     width: 330px
 }
 
+.loginForm, .registerForm{
+    height: 600px;
+}
+
 .custom-form-control{
     width: 250px;
     margin: 0px auto;
